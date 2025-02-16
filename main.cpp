@@ -73,8 +73,8 @@ void meanShift(const Mat& input, Mat& output, float radius, int max_iter = 15, f
 
 int main() {
 
-    Mat input = imread("/home/edoardo/CLionProjects/MeanShiftClusterSeq/test_images/promuoviamo-paesaggio-italiano.jpg");
-    Mat originalInput=imread("/home/edoardo/CLionProjects/MeanShiftClusterSeq/test_images/promuoviamo-paesaggio-italiano.jpg");
+    Mat input = imread("/home/edoardo/CLionProjects/MeanShiftClusterSeq/test_images/paesaggio-grande.jpg");
+    Mat originalInput=imread("/home/edoardo/CLionProjects/MeanShiftClusterSeq/test_images/paesaggio-grande.jpg");
     //ridimensiono dimezzando il numero di pixel(?)
 
     resize(input, input, Size(), 0.5, 0.5, INTER_AREA);
@@ -86,7 +86,7 @@ int main() {
 
    
     Mat output;
-    float radius = 5.0;
+    float radius = 3.0;
 
     auto start = std::chrono::high_resolution_clock::now();
     meanShift(input, output, radius);
